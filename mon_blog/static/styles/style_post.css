@@ -1,0 +1,10 @@
+#avatar {
+    width: 20rem;
+
+}
+
+#date_publication {
+    text-align: end;
+    font-style: italic;
+    font-size: 0.9em;
+}

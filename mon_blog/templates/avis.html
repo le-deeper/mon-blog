@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Avis</title>{% endblock %}
+{% block style_page %}
+<link rel="stylesheet" href="{% static 'styles/style_avis.css' %}">
+{% endblock %}
+{% block content %}
+<div id="globale">
+    <div id="side_container">
+        <figure id="avatar_container">
+            <img src="/static/avatar.jpg" alt="avatar" id="avatar">
+            <figcaption>El Housseine</figcaption>
+        </figure>
+    </div>
+    <div id="container">
+        {% if avis %}
+        {% for a in avis %}
+            <article>
+                <h2 class="title">Avis de {{ a.prenom }} {{ a.nom }}</h2>
+                <p class="note">Note: {{ a.note }} / 5</p>
+                <p>
+                    {{ a.avis }}
+                </p>
+
+            </article>
+        {% endfor %}
+        {% else %}
+            <div class="info">Pas d'avis encore !</div>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

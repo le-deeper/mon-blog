@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>{{ post.titre }}</title>{% endblock %}
+{% block style_page %}
+<link rel="stylesheet" href="{% static 'styles/style_post.css' %}">
+{% endblock %}
+{% block content %}
+<div id="globale">
+    <div id="side_container">
+        <figure id="avatar_container">
+            <img src="{% if post.image %}{{post.image.url}}{% else %}{{post.image_url}}{% endif %}" id="avatar">
+        </figure>
+    </div>
+    <div id="container">
+        <article>
+            <h2 class="title">{{ post.titre }}</h2>
+            <p>
+                {{ post.contenu|safe }}
+            </p>
+            <p id="date_publication">Post publié le {{ post.date_publication|date:"l d F Y à f" }}</p>
+        </article>
+
+    </div>
+
+</div>
+{% endblock %}

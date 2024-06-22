@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Posts {{ categorie }}</title>{% endblock %}
+{% block style_page %}
+<link rel="stylesheet" href="{% static 'styles/style_posts.css' %}">
+{% endblock %}
+{% block content %}
+<div id="globale">
+    <article id="posts_container">
+        {% if posts %}
+        {% for post in posts %}
+
+        <div class="post_container">
+            <a href="/post-{{ post.pk }}/" class="card">
+                <img src="{% if post.image %}{{post.image.url}}{% else %}{{post.image_url}}{% endif %}" class="illustration">
+                <p class="subtitle">{{ post.titre }}</p>
+            </a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="info">Pas de posts {{ categorie }} encore !</div>
+        {% endif %}
+    </article>
+
+</div>
+{% endblock %}

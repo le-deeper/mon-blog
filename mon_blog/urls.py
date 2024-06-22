@@ -16,7 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
+
+from mon_blog.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', go_to_index),
+    path('avis/', go_to_avis),
+    path('loisirs/', go_to_loisirs),
+    path('contact/', go_to_contact),
+    path('foot/', go_to_foot_posts),
+    path('anime/', go_to_anime_posts),
+    path('game/', go_to_game_posts),
+    path('other/', go_to_other_posts),
+    path('post-<int:post_id>/', go_to_post),
+    path('creer-avis/', create_avis),
+    path('nouveau-post/', publish),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

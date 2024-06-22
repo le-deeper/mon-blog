@@ -1,0 +1,19 @@
+#posts_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post_container {
+    max-width: 300px;
+    margin: auto;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.post_container .illustration {
+    width: 150px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+}

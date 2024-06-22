@@ -1,0 +1,276 @@
+/* Variables */
+:root {
+    --bg-color: #caf0f8;
+    --fg-color: #d0f4de;
+    --bg-second-color: #a2d2ff;
+    --dark-color: #333333;
+    --grey-color: #838282;
+    --info-color: #ffc107;
+}
+
+/* Polices */
+@font-face {
+    font-family: "Title";
+    src: url("fonts/Agbalumo.ttf");
+}
+
+@font-face {
+    font-family: "Text";
+    src: url("fonts/JosefinSans.ttf");
+}
+
+/* Réinitialisation */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Text', sans-serif;
+    scroll-behavior: smooth;
+    scroll-margin-top: 4rem;
+}
+
+a, a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--grey-color);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--dark-color);
+  border-radius: 10px;
+}
+
+/* Fin Scrollbar */
+
+body {
+    background-color: var(--bg-color);
+}
+
+a {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 0rem;
+}
+
+
+/* DEBUT En-tête de la page (Barre et Menu du site) peu importe le screen */
+
+/* Barre d'en tête, logo et texte centrés */
+header {
+    height: 4rem;
+    padding: 10px;
+    display: flex;
+    background-color: var(--bg-color);
+    align-items: center;
+    justify-content: center;
+}
+
+#page_title {
+    font-weight: initial;
+    font-style: normal;
+    margin-bottom: 0;
+}
+
+#blog_image {
+    width: 40px;
+    padding-right: 10px;
+}
+
+/* Menu, fixé peu importé la taille de l'écran */
+#menu {
+    position: sticky;
+    z-index: 1;
+    background-color: var(--bg-color);
+}
+
+#menu li {
+    position: relative;
+}
+
+#menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--dark-color);
+    text-align: center;
+}
+
+#menu ul ul {
+    max-height: 0;
+    overflow: hidden;
+}
+
+#menu ul ul li a {
+    border-radius: 5px;
+}
+
+#menu ul li ul a:hover {
+    display: block;
+    background-color: var(--fg-color);
+}
+
+/* FIN en-tête */
+
+/* Style peu importe l'écran */
+
+/* Style des articles, qui sont arrondis et occupent une partie de la longueur avec un effet d'ombre */
+article {
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    margin-top: 2rem;
+    box-shadow: 5px 2px 2px var(--dark-color);
+    background-color: var(--fg-color);
+}
+
+article p {
+    margin-top: 10px;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+.info {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--info-color);
+    width: 100%;
+    padding: 15px;
+}
+
+/* Style des titres des articles */
+.title {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #000;
+    font-size: 2em;
+    font-family: 'Title', sans-serif;
+}
+
+/* Style de l'avatar, qui est centré et surelevé grâce à un effet d'ombre */
+#avatar {
+    width: 15rem;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 20px;
+    box-shadow: 3px 2px 2px var(--dark);
+}
+
+/* Style des titres d'images */
+.subtitle, figcaption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Cartes: Image et description en bas de celle-ci */
+
+.card {
+    margin: 10px;
+    background-color: transparent;
+    border: none;
+    transition: all 1s ease-in-out;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Effets: Décale le block et affiche une ombre en bas à droite  */
+.card:hover,
+.information:hover {
+    transform: translate(-10px);
+    border: 1px solid var(--grey-color);
+    box-shadow: 3px 3px 1px var(--bg-second-color);
+}
+
+.illustration {
+    margin: auto;
+    display: block;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+/* Image et description sur la même ligne */
+
+.information {
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+}
+
+/* Pour créer un espace au cas où les images n'ont pas la même taille afin que le texte de leur description soit aligné */
+.information div {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 48px;
+}
+
+.information div img {
+    display: block;
+    height: 48px;
+    margin: auto;
+}
+
+.information .subtitle {
+    display: block;
+    margin-left: 1rem;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Formulaire */
+/* Table */
+.stats {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.stats td {
+    padding: 8px;
+    text-align: center;
+}
+
+/* Affichage Videos  */
+
+.video {
+    border: none;
+    margin-top: 1rem;
+    width: 100%;
+    height: 25rem;
+    border-radius: 10px;
+}
+
+.popup {
+    position: fixed;
+    top: 95%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    border-radius: 10px;
+    display: none;
+}

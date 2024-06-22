@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Contact</title>{% endblock %}
+{% block content %}
+<div id="globale">
+    <div id="side_container">
+        <figure id="avatar_container">
+            <img src="/static/avatar.jpg" alt="avatar" id="avatar">
+            <figcaption>El Housseine</figcaption>
+        </figure>
+    </div>
+    <div id="container">
+        <article id="contact">
+            <h2 class="title">Contact</h2>
+            <figure class="information">
+                <div>
+                    <img src="/static/gmail.png" alt="Logo Gmail">
+                </div>
+                <figcaption class="subtitle"><a href="mailto:abdellahielhousseine@gmail.com">Envoyer un email</a></figcaption>
+
+            </figure>
+            <figure class="information">
+                <div>
+                    <img src="/static/github.png" alt="Logo github">
+                </div>
+                <figcaption class="subtitle"><a href="https://github.com/le-deeper">Consulter le profil Github</a></figcaption>
+
+            </figure>
+            <figure class="information">
+                <div>
+                    <img src="/static/linkedin.png" alt="Logo linkedin">
+                </div>
+                <figcaption class="subtitle"><a href="https://www.linkedin.com/in/abdallahi-el-housseine-925b0b2b7/">Consulter le profil Linkedin</a></figcaption>
+
+            </figure>
+        </article>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Mes loisirs</title>{% endblock %}
+{% block content %}
+<div id="globale">
+    <div id="side_container">
+        <figure id="avatar_container">
+            <img src="/static/avatar.jpg" alt="avatar" id="avatar">
+            <figcaption>El Housseine</figcaption>
+        </figure>
+    </div>
+    <div id="container">
+        <article id="passtime">
+            <h2 class="title">Passe-temps Favoris</h2>
+            <p>Pour passer du bon temps, je joue au foot quand je peux. Sinon, je regarde des vidéos youtube qui montre des actions spéciales d'un joueur. J'aime regarder les vidéos sur Neymar qui est un dribbleur hors paire, des vidéos sur Ronaldo quand il était à Man Utd ou quand il était au Real Madrid, des vidéos sur Messi ou encore des vidéos de freestylers comme Pogba, Douglas Costa, Taarabt... Enfin, je regarde des clips de game apex sur des persos que je joue afin de m'améliorer. La nuit, je regarde en général un animé d'action, de stratégies ou de sports extrêmes.</p>
+        </article>
+        <article id="foot_video_example">
+            <h2 class="title">Foot: exemples de vidéos que je regarde</h2>
+            <iframe class="video" src="https://www.youtube.com/embed/Yq7Yy8H5J-8?si=BLe7eY2rO1cACCs6" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </article>
+        <article id="apex_video_example">
+            <h2 class="title">Apex: exemples de vidéos que je regarde</h2>
+            <iframe class="video" src="https://www.youtube.com/embed/MdgXdTBsTFo?si=bhkfosQ2kO71Po0d" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </article>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Mon Blog</title>{% endblock %}
+{% block content %}
+<div id="globale">
+    <div id="side_container">
+        <figure id="avatar_container">
+            <img src="static/avatar.jpg" alt="avatar" id="avatar">
+            <figcaption>El Housseine</figcaption>
+        </figure>
+    </div>
+    <div id="container">
+        <article id="presentation">
+            <h2 class="title">Présentation</h2>
+            <p>Je m'appelle El Housseine et bienvenue sur mon blog personnel. Actuellement,
+                je suis en 2ème année en BUT Informatique. Bien évidemment,
+                j'aime l'informatique. J'aime coder et j'ai quelques connaissances
+                en Python, Kotlin, Java, C, Javascript et HTML/CSS. En dehors de l'Université, je pratique
+                régulièrement du foot, je suis gaucher et je regarde beaucoup de vidéos sur le foot
+                que ce soit des analyses sur les performances d'un joueur (highlights), des debriefs
+                ou encore des pronostics. De plus, j'aime regarder des animés (dessins animés japonais)
+                et jouer aux jeux-vidéos. D'ailleurs, j'aime m'exprimer et débattre sur ces sujets.
+                Vous retrouverez donc dans ce blog des expériences personnelles ou des avis sur des sujets foots,
+                animes ou jeux-vidéos.
+            </p>
+        </article>
+        <article id="football">
+            <h2 class="title">Articles Football</h2>
+
+            {% if football_posts %}
+                {% for post in football_posts %}
+                    <a href="/post-{{ post.pk }}/" class="information">
+                        <div>
+                            <img src="{% if post.image %}{{post.image.url}}{% else %}{{post.image_url}}{% endif %}" class="illustration">
+                        </div>
+                        <figcaption class="subtitle">{{ post.titre }}</figcaption>
+                    </a>
+                {% endfor %}
+            {% else %}
+                <div class="info">Pas de posts encore !</div>
+            {% endif %}
+
+        </article>
+        <article id="anime">
+            <h2 class="title">Articles Animés</h2>
+            {% if anime_posts %}
+                {% for post in anime_posts %}
+                    <a href="/post-{{ post.pk }}/" class="information">
+                        <div>
+                            <img src="{% if post.image %}{{post.image.url}}{% else %}{{post.image_url}}{% endif %}" class="illustration">
+                        </div>
+                        <p class="subtitle">{{ post.titre }}</p>
+                    </a>
+                {% endfor %}
+            {% else %}
+                <div class="info">Pas de posts encore !</div>
+            {% endif %}
+
+        </article>
+        <article id="games">
+            <h2 class="title">Articles Jeux-Vidéos</h2>
+            {% if jeu_posts %}
+                {% for post in jeu_posts %}
+                    <a href="/post-{{ post.pk }}/" class="information">
+                        <div>
+                            <img src="{% if post.image %}{{post.image.url}}{% else %}{{post.image_url}}{% endif %}" class="illustration">
+                        </div>
+                        <figcaption class="subtitle">{{ post.titre }}</figcaption>
+                    </a>
+                {% endfor %}
+            {% else %}
+                <div class="info">Pas de posts encore !</div>
+            {% endif %}
+        </article>
+        <article id="opinion">
+            <h2 class="title">Editer Avis</h2>
+            <form class="row" action="/creer-avis/" method="post">
+                {% csrf_token %}
+                <div class="form-group col-md-6">
+                    <label for="nom">Nom :</label>
+                    <input type="text" class="form-control" id="nom" name="nom" placeholder="Alex" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="prenom">Prenom :</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Depont" required>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="avis">Votre Avis :</label>
+                    <textarea class="form-control" id="avis" name="avis" rows="4" placeholder="Qu'en pensez vous" required></textarea>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="note">Note :</label>
+                    <select class="form-control" id="note" name="note" required>
+                        <option value="5">5/5</option>
+                        <option value="4">4/5</option>
+                        <option value="3">3/5</option>
+                        <option value="2">2/5</option>
+                        <option value="1">1/5</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary col-md-4">Enregistrer l'Avis</button>
+                </div>
+            </form>
+        </article>
+    </div>
+</div>
+{% endblock %}
