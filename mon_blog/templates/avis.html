@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load static %}
-{% block title %}<title>Avis</title>{% endblock %}
+{% block title %}<title>{% trans "Avis" %}</title>{% endblock %}
 {% block style_page %}
 <link rel="stylesheet" href="{% static 'styles/style_avis.css' %}">
 {% endblock %}
@@ -16,8 +17,8 @@
         {% if avis %}
         {% for a in avis %}
             <article>
-                <h2 class="title">Avis de {{ a.prenom }} {{ a.nom }}</h2>
-                <p class="note">Note: {{ a.note }} / 5</p>
+                <h2 class="title">{% trans "Avis de" %} {{ a.prenom }} {{ a.nom }}</h2>
+                <p class="note">{% trans "Note:" %} {{ a.note }} / 5</p>
                 <p>
                     {{ a.avis }}
                 </p>
@@ -25,7 +26,7 @@
             </article>
         {% endfor %}
         {% else %}
-            <div class="info">Pas d'avis encore !</div>
+            <div class="info">{% trans "Pas d'avis encore !" %}</div>
         {% endif %}
     </div>
 

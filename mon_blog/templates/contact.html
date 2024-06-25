@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load static %}
 {% block title %}<title>Contact</title>{% endblock %}
 {% block content %}
@@ -11,26 +12,26 @@
     </div>
     <div id="container">
         <article id="contact">
-            <h2 class="title">Contact</h2>
+            <h2 class="title">{% trans "Contact" %}</h2>
             <figure class="information">
                 <div>
                     <img src="/static/gmail.png" alt="Logo Gmail">
                 </div>
-                <figcaption class="subtitle"><a href="mailto:abdellahielhousseine@gmail.com">Envoyer un email</a></figcaption>
+                <figcaption class="subtitle"><a href="mailto:abdellahielhousseine@gmail.com">{% trans "Envoyer un email" %}</a></figcaption>
 
             </figure>
             <figure class="information">
                 <div>
                     <img src="/static/github.png" alt="Logo github">
                 </div>
-                <figcaption class="subtitle"><a href="https://github.com/le-deeper">Consulter le profil Github</a></figcaption>
+                <figcaption class="subtitle"><a href="https://github.com/le-deeper">{% trans "Consulter le profil Github" %}</a></figcaption>
 
             </figure>
             <figure class="information">
                 <div>
                     <img src="/static/linkedin.png" alt="Logo linkedin">
                 </div>
-                <figcaption class="subtitle"><a href="https://www.linkedin.com/in/abdallahi-el-housseine-925b0b2b7/">Consulter le profil Linkedin</a></figcaption>
+                <figcaption class="subtitle"><a href="https://www.linkedin.com/in/abdallahi-el-housseine-925b0b2b7/">{% trans "Consulter le profil Linkedin" %}</a></figcaption>
 
             </figure>
         </article>

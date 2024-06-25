@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-24 18:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: .\mon_blog\settings.py:116
+msgid "Français"
+msgstr "Francés"
+
+#: .\mon_blog\settings.py:117
+msgid "Anglais"
+msgstr "Inglés"
+
+#: .\mon_blog\settings.py:118
+msgid "Espagnol"
+msgstr "Español"
+
+#: .\mon_blog\templates\avis.html:4 .\mon_blog\templates\base.html:62
+msgid "Avis"
+msgstr "Opinión"
+
+#: .\mon_blog\templates\avis.html:20
+msgid "Avis de"
+msgstr "Opinión de"
+
+#: .\mon_blog\templates\avis.html:21
+msgid "Note:"
+msgstr "Nota:"
+
+#: .\mon_blog\templates\avis.html:29
+msgid "Pas d'avis encore !"
+msgstr "¡No hay opiniones todavía!"
+
+#: .\mon_blog\templates\base.html:24
+msgid "Mon Blog"
+msgstr "Mi Blog"
+
+#: .\mon_blog\templates\base.html:31
+msgid "Accueil"
+msgstr "Inicio"
+
+#: .\mon_blog\templates\base.html:33 .\mon_blog\templates\index.html:15
+msgid "Présentation"
+msgstr "Presentación"
+
+#: .\mon_blog\templates\base.html:34
+msgid "Derniers Posts Football"
+msgstr "Últimos Posts de Fútbol"
+
+#: .\mon_blog\templates\base.html:35
+msgid "Derniers Posts Animés"
+msgstr "Últimos Posts de Animes"
+
+#: .\mon_blog\templates\base.html:36
+msgid "Derniers Posts Jeux-Vidéos"
+msgstr "Últimos Posts de Videojuegos"
+
+#: .\mon_blog\templates\base.html:37
+msgid "Donnez votre avis !"
+msgstr "¡Da tu opinión!"
+
+#: .\mon_blog\templates\base.html:41
+msgid "Posts"
+msgstr "Posts"
+
+#: .\mon_blog\templates\base.html:43
+msgid "Football"
+msgstr "Fútbol"
+
+#: .\mon_blog\templates\base.html:44
+msgid "Animés"
+msgstr "Animes"
+
+#: .\mon_blog\templates\base.html:45
+msgid "Jeux-vidéos"
+msgstr "Videojuegos"
+
+#: .\mon_blog\templates\base.html:46
+msgid "Autres"
+msgstr "Otros"
+
+#: .\mon_blog\templates\base.html:47
+msgid "Nouveau Post"
+msgstr "Nuevo Post"
+
+#: .\mon_blog\templates\base.html:51
+msgid "Loisirs"
+msgstr "Ocios"
+
+#: .\mon_blog\templates\base.html:53
+msgid "Passe-temps favoris"
+msgstr "Pasatiempos favoritos"
+
+#: .\mon_blog\templates\base.html:54
+msgid "Exemples de vidéos Foot"
+msgstr "Ejemplos de videos de Fútbol"
+
+#: .\mon_blog\templates\base.html:55
+msgid "Exemples de vidéos Apex"
+msgstr "Ejemplos de videos de Apex"
+
+#: .\mon_blog\templates\base.html:59 .\mon_blog\templates\contact.html:15
+msgid "Contact"
+msgstr "Contacto"
+
+#: .\mon_blog\templates\base.html:65
+msgid "Langue"
+msgstr "Idioma"
+
+#: .\mon_blog\templates\contact.html:20
+msgid "Envoyer un email"
+msgstr "Enviar un email"
+
+#: .\mon_blog\templates\contact.html:27
+msgid "Consulter le profil Github"
+msgstr "Consultar el perfil de Github"
+
+#: .\mon_blog\templates\contact.html:34
+msgid "Consulter le profil Linkedin"
+msgstr "Consultar el perfil de Linkedin"
+
+#: .\mon_blog\templates\index.html:16
+msgid ""
+"\n"
+"                Je m'appelle El Housseine et bienvenue sur mon blog "
+"personnel. Actuellement,\n"
+"                je suis en 2ème année en BUT Informatique. Bien évidemment,\n"
+"                j'aime l'informatique. J'aime coder et j'ai quelques "
+"connaissances\n"
+"                en Python, Kotlin, Java, C, Javascript et HTML/CSS. En "
+"dehors de l'Université, je pratique\n"
+"                régulièrement du foot, je suis gaucher et je regarde "
+"beaucoup de vidéos sur le foot\n"
+"                que ce soit des analyses sur les performances d'un joueur "
+"(highlights), des debriefs\n"
+"                ou encore des pronostics. De plus, j'aime regarder des "
+"animés (dessins animés japonais)\n"
+"                et jouer aux jeux-vidéos. D'ailleurs, j'aime m'exprimer et "
+"débattre sur ces sujets.\n"
+"                Vous retrouverez donc dans ce blog des expériences "
+"personnelles ou des avis sur des sujets foots,\n"
+"                animes ou jeux-vidéos.\n"
+"                "
+msgstr ""
+"\n"
+"                Me llamo El Housseine y bienvenidos a mi blog personal. "
+"Actualmente,\n"
+"                estoy en el segundo año en BUT Informática. Por supuesto,\n"
+"                me gusta la informática. Me gusta programar y tengo algunos "
+"conocimientos\n"
+"                en Python, Kotlin, Java, C, Javascript y HTML/CSS. Fuera de "
+"la universidad, practico\n"
+"                fútbol regularmente, soy zurdo y veo muchos videos sobre "
+"fútbol,\n"
+"                ya sean análisis de las actuaciones de un jugador "
+"(highlights), resúmenes\n"
+"                o incluso pronósticos. Además, me gusta ver animes (dibujos "
+"animados japoneses)\n"
+"                y jugar videojuegos. Además, me gusta expresarme y debatir "
+"sobre estos temas.\n"
+"                Entonces, en este blog encontrarán experiencias personales o "
+"opiniones sobre temas de fútbol,\n"
+"                animes o videojuegos.\n"
+"                "
+
+#: .\mon_blog\templates\index.html:31
+msgid "Articles Football"
+msgstr "Artículos de Fútbol"
+
+#: .\mon_blog\templates\index.html:43 .\mon_blog\templates\index.html:59
+#: .\mon_blog\templates\index.html:75
+msgid "Pas de posts encore !"
+msgstr "¡No hay posts todavía!"
+
+#: .\mon_blog\templates\index.html:48
+msgid "Articles Animés"
+msgstr "Artículos de Animes"
+
+#: .\mon_blog\templates\index.html:64
+msgid "Articles Jeux-Vidéos"
+msgstr "Artículos de Videojuegos"
+
+#: .\mon_blog\templates\index.html:79
+msgid "Editer Avis"
+msgstr "Editar Opinión"
+
+#: .\mon_blog\templates\index.html:83
+msgid "Nom :"
+msgstr "Nombre:"
+
+#: .\mon_blog\templates\index.html:88
+msgid "Prenom :"
+msgstr "Apellido:"
+
+#: .\mon_blog\templates\index.html:92
+msgid "Votre Avis :"
+msgstr "Tu Opinión:"
+
+#: .\mon_blog\templates\index.html:93
+msgid "Qu'en pensez vous"
+msgstr "¿Qué opinas?"
+
+#: .\mon_blog\templates\index.html:96
+msgid "Note :"
+msgstr "Nota:"
+
+#: .\mon_blog\templates\index.html:106
+msgid "Enregistrer l'Avis"
+msgstr "Guardar Opinión"
+
+#: .\mon_blog\templates\loisirs.html:4
+msgid "Mes loisirs"
+msgstr "Mis pasatiempos"
+
+#: .\mon_blog\templates\loisirs.html:15
+msgid "Passe-temps Favoris"
+msgstr "Pasatiempos Favoritos"
+
+#: .\mon_blog\templates\loisirs.html:17
+msgid ""
+"\n"
+"                Pour passer du bon temps, je joue au foot quand je peux.\n"
+"                Sinon, je regarde des vidéos youtube qui montre des actions "
+"spéciales d'un joueur.\n"
+"                J'aime regarder les vidéos sur Neymar qui est un dribbleur "
+"hors paire,\n"
+"                des vidéos sur Ronaldo quand il était à Man Utd ou quand il "
+"était au Real Madrid,\n"
+"                des vidéos sur Messi ou encore des vidéos de freestylers "
+"comme Pogba, Douglas Costa, Taarabt...\n"
+"                Enfin, je regarde des clips de game apex sur des persos que "
+"je joue afin de m'améliorer.\n"
+"                La nuit, je regarde en général un animé d'action, de "
+"stratégies ou de sports extrêmes.\n"
+"                "
+msgstr ""
+"\n"
+"                Para pasar un buen rato, juego al fútbol cuando puedo.\n"
+"                Si no, veo videos en YouTube que muestran acciones "
+"especiales de un jugador.\n"
+"                Me gusta ver videos sobre Neymar, que es un driblador "
+"excepcional,\n"
+"                videos sobre Ronaldo cuando estaba en Man Utd o cuando "
+"estaba en el Real Madrid,\n"
+"                videos sobre Messi o videos de freestylers como Pogba, "
+"Douglas Costa, Taarabt...\n"
+"                Finalmente, veo clips de juego de Apex sobre personajes que "
+"juego para mejorar.\n"
+"                Por la noche, generalmente veo un anime de acción, "
+"estrategias o deportes extremos.\n"
+"                "
+
+#: .\mon_blog\templates\loisirs.html:29
+msgid "Foot: exemples de vidéos que je regarde"
+msgstr "Fútbol: ejemplos de videos que veo"
+
+#: .\mon_blog\templates\loisirs.html:33
+msgid "Apex: exemples de vidéos que je regarde"
+msgstr "Apex: ejemplos de videos que veo"
+
+#: .\mon_blog\templates\post.html:21
+msgid "Post publié le"
+msgstr "Post publicado el"
+
+#: .\mon_blog\templates\posts.html:22
+#, python-format
+msgid ""
+"\n"
+"            Pas de posts %(categorie)s encore !\n"
+"            "
+msgstr ""
+"\n"
+"            ¡No hay posts de %(categorie)s todavía!\n"
+"            "
+
+#: .\mon_blog\templates\publier.html:15
+msgid "Publier un post"
+msgstr "Publicar un post"
+
+#: .\mon_blog\templates\publier.html:19
+msgid "Titre :"
+msgstr "Título:"
+
+#: .\mon_blog\templates\publier.html:24
+msgid "Categorie :"
+msgstr "Categoría:"
+
+#: .\mon_blog\templates\publier.html:32
+msgid "Image :"
+msgstr "Imagen:"
+
+#: .\mon_blog\templates\publier.html:37
+msgid "Lien vers une image :"
+msgstr "Enlace a una imagen:"
+
+#: .\mon_blog\templates\publier.html:43
+msgid "Contenu :"
+msgstr "Contenido:"
+
+#: .\mon_blog\templates\publier.html:51
+msgid "Mot de Passe :"
+msgstr "Contraseña:"
+
+#: .\mon_blog\templates\publier.html:56
+msgid "Publier"
+msgstr "Publicar"

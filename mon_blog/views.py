@@ -2,6 +2,9 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse, Http404
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.utils.translation import activate
+
+from mon_blog import settings
 from mon_blog.models import Post, Avis, MotDePasse
 
 
@@ -140,3 +143,11 @@ def publish(request):
             return redirect(f"/post-{post.pk}/")
         messages.error(request, "Mot de passe incorrect")
         return render(request, "publier.html", context=context)
+
+
+def change_language(request, lang_code):
+    next_url = request.GET.get('next', '/')
+    response = redirect(next_url)
+    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)
+    activate(lang_code)
+    return response

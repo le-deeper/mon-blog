@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load static %}
 {% block title %}<title>Publier</title>{% endblock %}
 {% block content %}
@@ -11,16 +12,16 @@
     </div>
     <div id="container">
         <article id="publier">
-            <h2 class="title">Publier un post</h2>
+            <h2 class="title">{% trans "Publier un post" %}</h2>
             <form class="row" action="/nouveau-post/" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group col-md-6">
-                    <label for="titre">Titre :</label>
+                    <label for="titre">{% trans "Titre :" %}</label>
                     <input type="text" class="form-control" id="titre" name="titre" placeholder="One Piece"
                            {% if titre %} value="{{ titre }}" {% endif %} required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="categorie">Categorie :</label>
+                    <label for="categorie">{% trans "Categorie :" %}</label>
                     <select class="form-control" id="categorie" name="categorie" required>
                         {% for categ in categories %}
                         <option value="{{ categ.0 }}" {% if categorie == categ.0 %} selected {% endif %}>{{ categ.1 }}</option>
@@ -28,18 +29,18 @@
                     </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="image">Image :</label>
+                    <label for="image">{% trans "Image :" %}</label>
                     <input type="file" id="image" name="image" accept="image/png, image/jpeg"/>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="image_url">Lien vers une image :</label>
+                    <label for="image_url">{% trans "Lien vers une image :" %}</label>
                     <input type="url" id="image_url" name="image_url" accept="image/png, image/jpeg"
                            {% if image_url %} value="{{ image_url }}" {% endif %}/>
                 </div>
 
                 <div class="form-group col-md-12">
-                    <label for="contenu">Contenu :</label>
+                    <label for="contenu">{% trans "Contenu :" %}</label>
                     <textarea class="form-control" id="contenu" name="contenu" rows="4" placeholder="Contenu"
                                required>{% if contenu %}{{ contenu }}{% endif %}</textarea>
                 </div>
@@ -47,12 +48,12 @@
 
 
                 <div class="form-group col-md-12">
-                    <label for="mdp">Mot de Passe :</label>
+                    <label for="mdp">{% trans "Mot de Passe :" %}</label>
                     <input type="text" class="form-control" id="mdp" name="mdp" placeholder="priPiaT22" required>
                 </div>
 
                 <div class="form-group col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary col-md-4">Publier</button>
+                    <button type="submit" class="btn btn-primary col-md-4">{% trans "Publier" %}</button>
                 </div>
             </form>
         </article>

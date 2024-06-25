@@ -1,14 +1,13 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="fr">
+<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Abd. El Housseine">
         <meta name="publisher" content="Abd. El Housseine">
         <meta name="copyright" content="Abd. El Housseine">
-        <meta name="description" content="Mon blog">
-        <meta name="page-topic" content="Acceuil">
         {% block title %}{% endblock %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'styles/style.css' %}">
@@ -22,45 +21,61 @@
         {% block header %}
         <header>
             <a href="/"><img src="/static/mon_blog.png" alt="blog image" id="blog_image"></a>
-            <h1 id="page_title">Mon Blog</h1>
+            <h1 id="page_title">{% trans "Mon Blog" %}</h1>
             <div id="burger"><span></span></div>
         </header>
 
         <nav id="menu">
             <ul>
                 <li>
-                    <a href="/">Accueil</a>
+                    <a href="/">{% trans "Accueil" %}</a>
                     <ul>
-                        <li><a href="/#presentation">Présentation</a></li>
-                        <li><a href="/#football">Derniers Posts Football</a></li>
-                        <li><a href="/#anime">Derniers Posts Animés</a></li>
-                        <li><a href="/#games">Derniers Posts Jeux-Vidéos</a></li>
-                        <li><a href="/#opinion">Donnez votre avis !</a></li>
+                        <li><a href="/#presentation">{% trans "Présentation" %}</a></li>
+                        <li><a href="/#football">{% trans "Derniers Posts Football" %}</a></li>
+                        <li><a href="/#anime">{% trans "Derniers Posts Animés" %}</a></li>
+                        <li><a href="/#games">{% trans "Derniers Posts Jeux-Vidéos" %}</a></li>
+                        <li><a href="/#opinion">{% trans "Donnez votre avis !" %}</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a>Posts</a>
+                    <a>{% trans "Posts" %}</a>
                     <ul>
-                        <li><a href="/foot/">Football</a></li>
-                        <li><a href="/anime/">Animés</a></li>
-                        <li><a href="/game/">Jeux-vidéos</a></li>
-                        <li><a href="/other/">Autres</a></li>
-                        <li><a href="/nouveau-post/">Nouveau Post</a></li>
+                        <li><a href="/foot/">{% trans "Football" %}</a></li>
+                        <li><a href="/anime/">{% trans "Animés" %}</a></li>
+                        <li><a href="/game/">{% trans "Jeux-vidéos" %}</a></li>
+                        <li><a href="/other/">{% trans "Autres" %}</a></li>
+                        <li><a href="/nouveau-post/">{% trans "Nouveau Post" %}</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/loisirs">Loisirs</a>
+                    <a href="/loisirs">{% trans "Loisirs" %}</a>
                     <ul>
-                        <li><a href="/loisirs#passtime">Passe-temps favoris</a></li>
-                        <li><a href="/loisirs#foot_video_example">Exemples de vidéos Foot</a></li>
-                        <li><a href="/loisirs#apex_video_example">Exemples de vidéos Apex</a></li>
+                        <li><a href="/loisirs#passtime">{% trans "Passe-temps favoris" %}</a></li>
+                        <li><a href="/loisirs#foot_video_example">{% trans "Exemples de vidéos Foot" %}</a></li>
+                        <li><a href="/loisirs#apex_video_example">{% trans "Exemples de vidéos Apex" %}</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/contact">Contact</a>
+                    <a href="/contact">{% trans "Contact" %}</a>
                 </li>
                 <li>
-                    <a href="/avis">Avis</a>
+                    <a href="/avis">{% trans "Avis" %}</a>
+                </li>
+                <li>
+                    <a>{% trans "Langue" %}</a>
+                    <ul>
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                        <li>
+                            <a href="{% url 'change_language' language.code %}?next={{ request.path }}"
+                               {% if language.code == LANGUAGE_CODE %} style="font-weight: bold;"{% endif %}>
+                                {{ language.name_local|title }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </li>
             </ul>
         </nav>
