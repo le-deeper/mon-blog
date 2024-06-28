@@ -8,7 +8,7 @@ from openai import OpenAI
 
 class BlogAI:
     NOM_MODELE = "sentence-transformers/all-MiniLM-L6-v2"
-    CLE_API = "sk-proj-RMDYcvu7UKuVw4FnBzdiT3BlbkFJre466M8lmggoGKv2DZvL"
+    CLE_API = os.getenv('CHATGPT_CLE_API')
     tokenizer = AutoTokenizer.from_pretrained(NOM_MODELE)
     modele = AutoModel.from_pretrained(NOM_MODELE)
     qr_pipeline = pipeline("question-answering", model="deepset/roberta-base-squad2")
