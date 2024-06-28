@@ -69,13 +69,19 @@
                         {% get_language_info_list for LANGUAGES as languages %}
                         {% for language in languages %}
                         <li>
-                            <a href="{% url 'change_language' language.code %}?next={{ request.path }}"
+                            <a href="{% url 'changer_langue' language.code %}?next={{ request.path }}"
                                {% if language.code == LANGUAGE_CODE %} style="font-weight: bold;"{% endif %}>
                                 {{ language.name_local|title }}
                             </a>
                         </li>
                         {% endfor %}
                     </ul>
+                </li>
+                <li>
+                    <a href="/rechercher">{% trans "Rechercher" %}</a>
+                </li>
+                <li>
+                    <a href="/discuter">{% trans "Discuter" %}</a>
                 </li>
             </ul>
         </nav>

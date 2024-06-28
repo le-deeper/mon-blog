@@ -17,26 +17,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
-from django.conf import settings
-from django.conf.urls.i18n import i18n_patterns
 
 from mon_blog.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
-    path('', go_to_index),
-    path('avis/', go_to_avis),
-    path('loisirs/', go_to_loisirs),
-    path('contact/', go_to_contact),
-    path('foot/', go_to_foot_posts),
-    path('anime/', go_to_anime_posts),
-    path('game/', go_to_game_posts),
-    path('other/', go_to_other_posts),
-    path('post-<int:post_id>/', go_to_post),
-    path('creer-avis/', create_avis),
-    path('nouveau-post/', publish),
-    path('change_language/<str:lang_code>/', change_language, name='change_language'),
+    path('', go_to_index, name='acceuil'),
+    path('avis/', go_to_avis, name='avis'),
+    path('loisirs/', go_to_loisirs, name='loisirs'),
+    path('contact/', go_to_contact, name='contact'),
+    path('foot/', go_to_foot_posts, name='foot_posts'),
+    path('anime/', go_to_anime_posts, name='anime_posts'),
+    path('game/', go_to_game_posts, name='game_posts'),
+    path('other/', go_to_other_posts, name='other_posts'),
+    path('post-<int:post_id>/', go_to_post, name='go_to_posts'),
+    path('creer-avis/', create_avis, name='creer_avis'),
+    path('nouveau-post/', publish, name='publier'),
+    path('changer_langue/<str:lang_code>/', change_language, name='changer_langue'),
+    path('rechercher/', search, name='rechercher'),
+    path('discuter/', discuter, name='discuter'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

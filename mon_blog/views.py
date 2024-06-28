@@ -1,11 +1,14 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.http import HttpResponse, Http404
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.utils.translation import activate
 
+
 from mon_blog import settings
+from mon_blog.blog_ai import BlogAI
 from mon_blog.models import Post, Avis, MotDePasse
+
+blog_ai = BlogAI.get_instance(Post.objects.all())
 
 
 def get_post(post_id):
@@ -13,6 +16,7 @@ def get_post(post_id):
         return Post.objects.all().filter(pk=post_id).get()
     except ObjectDoesNotExist:
         return None
+
 
 def check_pwd(pwd):
     try:
@@ -22,6 +26,7 @@ def check_pwd(pwd):
         return True
     except ObjectDoesNotExist:
         return None
+
 
 def go_to_index(request):
     foot_posts = Post.objects.all().filter(categorie="foot")[:5]
@@ -34,12 +39,14 @@ def go_to_index(request):
                       "anime_posts": anime_posts
                   })
 
+
 def go_to_avis(request):
     avis = Avis.objects.all()
     return render(request, "avis.html",
                   context={
                       "avis": avis,
                   })
+
 
 def go_to_loisirs(request):
     return render(request, "loisirs.html")
@@ -109,9 +116,9 @@ def create_avis(request):
         messages.success(request, "Avis enregistré")
         return redirect("/")
 
+
 def publish(request):
     if request.method == "GET":
-        # categories = [x[0] for x in ]
         return render(request, "publier.html", context={"categories": Post.categories_choix})
     elif request.method == "POST":
         data = request.POST
@@ -151,3 +158,27 @@ def change_language(request, lang_code):
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)
     activate(lang_code)
     return response
+
+
+def search(request):
+    query = request.GET.get('q', '')
+    if query:
+        resultat = blog_ai.rechercher_plus_proche_voisin(query)
+        return render(request, 'rechercher.html', {
+            'posts': resultat[0],
+            'recherche': query,
+            'reponse': resultat[1]
+        })
+    return render(request, 'rechercher.html', {
+        'recherche': query,
+    })
+
+
+def discuter(request):
+    query = request.GET.get('q', '')
+    if query:
+        return render(request, 'discuter.html', {
+            'question': query,
+            'reponse': blog_ai.chatGPT(query)
+        })
+    return render(request, 'discuter.html', )

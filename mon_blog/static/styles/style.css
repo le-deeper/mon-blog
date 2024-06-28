@@ -274,3 +274,20 @@ article p {
     border-radius: 10px;
     display: none;
 }
+
+
+#reponse {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.bouton {
+    display: block;
+    margin: auto;
+    padding: 8px;
+    border-radius: 15px;
+    width: 10%;
+    min-width: 100px;
+    border: 1px black solid;
+}

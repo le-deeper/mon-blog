@@ -1,0 +1,9 @@
+#rechercher_champ {
+    display: block;
+    padding: 7px;
+    margin: 10px auto;
+    border-radius: 15px;
+    border: none;
+    width: 20%;
+    min-width: 130px;
+}

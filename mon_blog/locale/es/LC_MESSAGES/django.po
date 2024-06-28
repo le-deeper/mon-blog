@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-24 18:01+0000\n"
+"POT-Creation-Date: 2024-06-28 15:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
-
 #: .\mon_blog\settings.py:116
 msgid "Français"
 msgstr "Francés"
@@ -33,7 +32,7 @@ msgstr "Español"
 
 #: .\mon_blog\templates\avis.html:4 .\mon_blog\templates\base.html:62
 msgid "Avis"
-msgstr "Opinión"
+msgstr "Opiniones"
 
 #: .\mon_blog\templates\avis.html:20
 msgid "Avis de"
@@ -45,7 +44,7 @@ msgstr "Nota:"
 
 #: .\mon_blog\templates\avis.html:29
 msgid "Pas d'avis encore !"
-msgstr "¡No hay opiniones todavía!"
+msgstr "¡No hay opiniones aún!"
 
 #: .\mon_blog\templates\base.html:24
 msgid "Mon Blog"
@@ -77,7 +76,7 @@ msgstr "¡Da tu opinión!"
 
 #: .\mon_blog\templates\base.html:41
 msgid "Posts"
-msgstr "Posts"
+msgstr "Publicaciones"
 
 #: .\mon_blog\templates\base.html:43
 msgid "Football"
@@ -97,15 +96,15 @@ msgstr "Otros"
 
 #: .\mon_blog\templates\base.html:47
 msgid "Nouveau Post"
-msgstr "Nuevo Post"
+msgstr "Nueva Publicación"
 
 #: .\mon_blog\templates\base.html:51
 msgid "Loisirs"
-msgstr "Ocios"
+msgstr "Aficiones"
 
 #: .\mon_blog\templates\base.html:53
 msgid "Passe-temps favoris"
-msgstr "Pasatiempos favoritos"
+msgstr "Pasatiempos Favoritos"
 
 #: .\mon_blog\templates\base.html:54
 msgid "Exemples de vidéos Foot"
@@ -123,6 +122,16 @@ msgstr "Contacto"
 msgid "Langue"
 msgstr "Idioma"
 
+#: .\mon_blog\templates\base.html:81 .\mon_blog\templates\discuter.html:4
+#: .\mon_blog\templates\rechercher.html:4
+#: .\mon_blog\templates\rechercher.html:13
+msgid "Rechercher"
+msgstr "Buscar"
+
+#: .\mon_blog\templates\base.html:84
+msgid "Discuter"
+msgstr "Conversar"
+
 #: .\mon_blog\templates\contact.html:20
 msgid "Envoyer un email"
 msgstr "Enviar un email"
@@ -134,6 +143,14 @@ msgstr "Consultar el perfil de Github"
 #: .\mon_blog\templates\contact.html:34
 msgid "Consulter le profil Linkedin"
 msgstr "Consultar el perfil de Linkedin"
+
+#: .\mon_blog\templates\discuter.html:12
+msgid "Poser la question"
+msgstr "Hacer la pregunta"
+
+#: .\mon_blog\templates\discuter.html:15
+msgid "Réponse de ChatGPT: "
+msgstr "Respuesta de ChatGPT: "
 
 #: .\mon_blog\templates\index.html:16
 msgid ""
@@ -159,23 +176,15 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"                Me llamo El Housseine y bienvenidos a mi blog personal. "
-"Actualmente,\n"
-"                estoy en el segundo año en BUT Informática. Por supuesto,\n"
-"                me gusta la informática. Me gusta programar y tengo algunos "
-"conocimientos\n"
-"                en Python, Kotlin, Java, C, Javascript y HTML/CSS. Fuera de "
-"la universidad, practico\n"
-"                fútbol regularmente, soy zurdo y veo muchos videos sobre "
-"fútbol,\n"
-"                ya sean análisis de las actuaciones de un jugador "
-"(highlights), resúmenes\n"
-"                o incluso pronósticos. Además, me gusta ver animes (dibujos "
-"animados japoneses)\n"
-"                y jugar videojuegos. Además, me gusta expresarme y debatir "
-"sobre estos temas.\n"
-"                Entonces, en este blog encontrarán experiencias personales o "
-"opiniones sobre temas de fútbol,\n"
+"                Me llamo El Housseine y bienvenido a mi blog personal. Actualmente,\n"
+"                estoy en mi segundo año de un Título Universitario en Informática. Por supuesto,\n"
+"                me encanta la informática. Me gusta programar y tengo algunos conocimientos\n"
+"                en Python, Kotlin, Java, C, Javascript y HTML/CSS. Fuera de la Universidad, practico\n"
+"                fútbol regularmente, soy zurdo y veo muchos videos sobre fútbol\n"
+"                ya sean análisis sobre las actuaciones de un jugador (highlights), resúmenes\n"
+"                o pronósticos. Además, me gusta ver animes (dibujos animados japoneses)\n"
+"                y jugar a videojuegos. Me gusta expresarme y debatir sobre estos temas.\n"
+"                Así que en este blog encontrarás experiencias personales u opiniones sobre temas de fútbol,\n"
 "                animes o videojuegos.\n"
 "                "
 
@@ -186,7 +195,7 @@ msgstr "Artículos de Fútbol"
 #: .\mon_blog\templates\index.html:43 .\mon_blog\templates\index.html:59
 #: .\mon_blog\templates\index.html:75
 msgid "Pas de posts encore !"
-msgstr "¡No hay posts todavía!"
+msgstr "¡No hay publicaciones aún!"
 
 #: .\mon_blog\templates\index.html:48
 msgid "Articles Animés"
@@ -202,11 +211,11 @@ msgstr "Editar Opinión"
 
 #: .\mon_blog\templates\index.html:83
 msgid "Nom :"
-msgstr "Nombre:"
+msgstr "Apellido:"
 
 #: .\mon_blog\templates\index.html:88
 msgid "Prenom :"
-msgstr "Apellido:"
+msgstr "Nombre:"
 
 #: .\mon_blog\templates\index.html:92
 msgid "Votre Avis :"
@@ -226,7 +235,7 @@ msgstr "Guardar Opinión"
 
 #: .\mon_blog\templates\loisirs.html:4
 msgid "Mes loisirs"
-msgstr "Mis pasatiempos"
+msgstr "Mis aficiones"
 
 #: .\mon_blog\templates\loisirs.html:15
 msgid "Passe-temps Favoris"
@@ -251,19 +260,13 @@ msgid ""
 "                "
 msgstr ""
 "\n"
-"                Para pasar un buen rato, juego al fútbol cuando puedo.\n"
-"                Si no, veo videos en YouTube que muestran acciones "
-"especiales de un jugador.\n"
-"                Me gusta ver videos sobre Neymar, que es un driblador "
-"excepcional,\n"
-"                videos sobre Ronaldo cuando estaba en Man Utd o cuando "
-"estaba en el Real Madrid,\n"
-"                videos sobre Messi o videos de freestylers como Pogba, "
-"Douglas Costa, Taarabt...\n"
-"                Finalmente, veo clips de juego de Apex sobre personajes que "
-"juego para mejorar.\n"
-"                Por la noche, generalmente veo un anime de acción, "
-"estrategias o deportes extremos.\n"
+"                Para pasar el tiempo, juego al fútbol cuando puedo.\n"
+"                Si no, veo videos de YouTube que muestran acciones especiales de un jugador.\n"
+"                Me gusta ver videos de Neymar, que es un driblador excepcional,\n"
+"                videos de Ronaldo cuando estaba en el Man Utd o en el Real Madrid,\n"
+"                videos de Messi o freestylers como Pogba, Douglas Costa, Taarabt...\n"
+"                Finalmente, veo clips de juego de Apex de personajes que juego para mejorar.\n"
+"                Por la noche, generalmente veo un anime de acción, estrategia o deportes extremos.\n"
 "                "
 
 #: .\mon_blog\templates\loisirs.html:29
@@ -276,7 +279,7 @@ msgstr "Apex: ejemplos de videos que veo"
 
 #: .\mon_blog\templates\post.html:21
 msgid "Post publié le"
-msgstr "Post publicado el"
+msgstr "Publicación publicada el"
 
 #: .\mon_blog\templates\posts.html:22
 #, python-format
@@ -286,12 +289,12 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"            ¡No hay posts de %(categorie)s todavía!\n"
+"            ¡No hay publicaciones %(categorie)s aún!\n"
 "            "
 
 #: .\mon_blog\templates\publier.html:15
 msgid "Publier un post"
-msgstr "Publicar un post"
+msgstr "Publicar una publicación"
 
 #: .\mon_blog\templates\publier.html:19
 msgid "Titre :"
@@ -320,3 +323,11 @@ msgstr "Contraseña:"
 #: .\mon_blog\templates\publier.html:56
 msgid "Publier"
 msgstr "Publicar"
+
+#: .\mon_blog\templates\rechercher.html:12
+msgid "Rechercher des articles..."
+msgstr "Buscar artículos..."
+
+#: .\mon_blog\templates\rechercher.html:17
+msgid "Réponse générée à partir des résultats: "
+msgstr "Respuesta generada a partir de los resultados: "

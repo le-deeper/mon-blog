@@ -2,8 +2,10 @@ from django.db import models
 from django.core.exceptions import ValidationError
 import hashlib
 
-# Post = (IdPost COUNTER, titre VARCHAR(50), categorie VARCHAR(50), contenu TEXT, datePublication DATETIME);
-# Avis = (IdAvis COUNTER, nom VARCHAR(50), avis TEXT, note INT, prenom VARCHAR(50));
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+from mon_blog.blog_ai import BlogAI
 
 
 class Post(models.Model):
@@ -54,3 +56,9 @@ class Avis(models.Model):
 
     def __str__(self):
         return f"{self.nom} {self.prenom} - Note: {self.note}"
+
+
+@receiver(post_save, sender=Post)
+def trigger_ajouter_article(sender, instance, created, **kwargs):
+    if created:
+        BlogAI.get_instance(Post.objects.all()).ajouter_article(instance)

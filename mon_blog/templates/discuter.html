@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}<title>{% trans "Rechercher" %}</title>{% endblock %}
+{% block style_page %}
+<link rel="stylesheet" href="{% static 'styles/style_discuter.css' %}">
+{% endblock %}
+{% block content %}
+<div>
+    <form method="get" action="{% url 'discuter' %}">
+        <textarea type="text" name="q" placeholder="Posez votre question" id="champ_question" required>{% if question %}{{ question }}{% endif %}</textarea>
+        <button type="submit" class="bouton">{% trans "Poser la question" %}</button>
+    </form>
+    {% if reponse %}
+    <div id="reponse">{% trans "Réponse de ChatGPT: " %}<br> {{ reponse }}</div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}<title>{% trans "Rechercher" %}</title>{% endblock %}
+{% block style_page %}
+<link rel="stylesheet" href="{% static 'styles/style_rechercher.css' %}">
+<link rel="stylesheet" href="{% static 'styles/style_posts.css' %}">
+{% endblock %}
+{% block content %}
+<div>
+    <form method="get" action="{% url 'rechercher' %}">
+        <input type="text" name="q" value="{{ recherche }}" placeholder="{% trans "Rechercher des articles..." %}" id="rechercher_champ">
+        <button type="submit" class="bouton">{% trans "Rechercher" %}</button>
+    </form>
+    {% if posts %}
+    {% if reponse %}
+        <div id="reponse">{% trans "Réponse générée à partir des résultats: " %}<br> {{ reponse }}</div>
+    {% endif %}
+    <article id="posts_container">
+
+        {% for post in posts %}
+
+        <div class="post_container">
+            <a href="/post-{{ post.pk }}/" class="card">
+                <img src="{% if post.image %}{{post.image.url}}{% else %}{{post.image_url}}{% endif %}" class="illustration">
+                <p class="subtitle">{{ post.titre }}</p>
+            </a>
+        </div>
+        {% endfor %}
+
+    </article>
+    {% endif %}
+</div>
+{% endblock %}
