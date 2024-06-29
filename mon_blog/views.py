@@ -8,10 +8,14 @@ from mon_blog import settings
 from mon_blog.blog_ai import BlogAI
 from mon_blog.models import Post, Avis, MotDePasse
 
+# On récupère l'instance de BlogAI
 blog_ai = BlogAI.get_instance(Post.objects.all())
 
 
 def get_post(post_id):
+    """
+    Recupérer un post
+    """
     try:
         return Post.objects.all().filter(pk=post_id).get()
     except ObjectDoesNotExist:
@@ -19,6 +23,9 @@ def get_post(post_id):
 
 
 def check_pwd(pwd):
+    """
+    Vérifier si le mdp est valide
+    """
     try:
         expected_pwd = MotDePasse.objects.all().get().mdp_hache
         if pwd != expected_pwd:
@@ -121,13 +128,14 @@ def publish(request):
     if request.method == "GET":
         return render(request, "publier.html", context={"categories": Post.categories_choix})
     elif request.method == "POST":
+        # On récupère les données
         data = request.POST
         files = request.FILES
         mdp = data["mdp"]
         mdp = MotDePasse.algorithm(str(mdp).encode()).hexdigest()
         titre = data["titre"]
         contenu = data["contenu"]
-        contenu = "</br>".join(contenu.split("\n"))
+        contenu = "</br>".join(contenu.split("\n")) # On prend en compte les sauts de lignes
         categorie = data["categorie"]
         context = {
             "categories": Post.categories_choix,
@@ -138,8 +146,10 @@ def publish(request):
         if check_pwd(mdp):
             image = files.get("image", None)
             if image:
+                # On récupère l'image
                 post = Post(titre=titre, contenu=contenu, categorie=categorie, image=image)
             else:
+                # Sinon l'url
                 image_url = data["image_url"]
                 if not image_url:
                     messages.error(request, "Aucune image fournie")
@@ -153,6 +163,7 @@ def publish(request):
 
 
 def change_language(request, lang_code):
+    """Modifie la langue en changeant la valeur du cookie"""
     next_url = request.GET.get('next', '/')
     response = redirect(next_url)
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)

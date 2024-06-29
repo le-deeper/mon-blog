@@ -11,6 +11,7 @@ Il s'agit d'un blog "personnel". On peut accéder à des articles sur différent
 - Publier un article (mdp: zarzis)![img_5.png](img_5.png)
 - Rechercher un post et avoir une réponse générée à partir des résultats![img_3.png](img_3.png)
 - Discuter avec chatGPT à propos du contenu des articles![img_4.png](img_4.png)
+- Messages affichés après certaines actions comme la publication d'un article ou d'un avis![img_6.png](img_6.png)
 
 ## Utilisation de ChatGPT 
 ChatGPT a été une aide précieuse pour réaliser certaines tâches.

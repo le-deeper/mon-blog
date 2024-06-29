@@ -151,3 +151,5 @@ MEDIA_URL = "/images/"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 APPEND_SLASH = True
+
+CSRF_TRUSTED_ORIGINS = ['https://*.mon-blog-production.up.railway.app','https://*.127.0.0.1']

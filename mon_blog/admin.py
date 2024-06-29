@@ -4,6 +4,7 @@ from mon_blog.models import Post, Avis, MotDePasse
 
 
 class PostAdmin(admin.ModelAdmin):
+    # image_tag sera appelé pour avoir un aperçu de l'image
     list_display = ('titre', 'categorie', 'date_publication', 'image_tag')
 
     def image_tag(self, obj):

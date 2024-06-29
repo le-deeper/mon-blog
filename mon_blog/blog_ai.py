@@ -7,12 +7,14 @@ from openai import OpenAI
 
 
 class BlogAI:
+    # Modèle pour trouver les articles pertinents
     NOM_MODELE = "sentence-transformers/all-MiniLM-L6-v2"
     # CLE_API = os.getenv('OPENAI_API_KEY')
     tokenizer = AutoTokenizer.from_pretrained(NOM_MODELE)
     modele = AutoModel.from_pretrained(NOM_MODELE)
+    # Modèle pour générer une réponse
     qr_pipeline = pipeline("question-answering", model="deepset/roberta-base-squad2")
-    k = 3
+    k = 3 # On récupèrer les 3 articles voisins
 
     instance = None
 
@@ -36,9 +38,12 @@ class BlogAI:
 
     @staticmethod
     def embed_text(text):
+        # On tokenise le texte avec une limite de 512
         inputs = BlogAI.tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512)
         with torch.no_grad():
+            # on prend le premier token
             embeddings = BlogAI.modele(**inputs).last_hidden_state[:, 0, :]
+        # on renvoie les embeddings sous forme de array
         return embeddings.squeeze().numpy()
 
     def ajouter_article(self, article):

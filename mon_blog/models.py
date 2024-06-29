@@ -58,6 +58,7 @@ class Avis(models.Model):
         return f"{self.nom} {self.prenom} - Note: {self.note}"
 
 
+# Ajouter tous les nouveaux articles à blogai
 @receiver(post_save, sender=Post)
 def trigger_ajouter_article(sender, instance, created, **kwargs):
     if created:
