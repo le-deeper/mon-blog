@@ -8,7 +8,7 @@ from openai import OpenAI
 
 class BlogAI:
     NOM_MODELE = "sentence-transformers/all-MiniLM-L6-v2"
-    CLE_API = os.getenv('CHATGPT_CLE_API')
+    # CLE_API = os.getenv('OPENAI_API_KEY')
     tokenizer = AutoTokenizer.from_pretrained(NOM_MODELE)
     modele = AutoModel.from_pretrained(NOM_MODELE)
     qr_pipeline = pipeline("question-answering", model="deepset/roberta-base-squad2")
@@ -16,10 +16,10 @@ class BlogAI:
 
     instance = None
 
-    def __init__(self, articles=None):
+    def __init__(self, articles=None, chatgpt_cle_api=os.getenv('OPENAI_API_KEY')):
         os.environ['KMP_DUPLICATE_LIB_OK'] = "True"
         self.client = OpenAI(
-            api_key=BlogAI.CLE_API,
+            api_key=chatgpt_cle_api,
         )
         self.index = faiss.IndexFlatL2(384)
         self.text_articles = ""
